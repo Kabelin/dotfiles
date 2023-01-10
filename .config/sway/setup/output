@@ -1,0 +1,9 @@
+### Output configuration
+  output {
+    # Setup displays:
+    $primary pos 0 0 mode 1920x1080@60Hz adaptive_sync on
+    $secondary pos 1920 0 mode 1366x768@60.002998Hz adaptive_sync on
+
+    # Background:
+    $secondary bg $default_background fill
+  }

@@ -1,0 +1,30 @@
+# Variables
+include ~/.config/sway/setup/variables
+
+# Bindings
+include ~/.config/sway/setup/bindings
+
+# Modes
+include ~/.config/sway/setup/modes
+
+# Output
+include ~/.config/sway/setup/output
+
+# Idle
+include ~/.config/sway/setup/idle
+
+# Input
+include ~/.config/sway/setup/input
+
+# Misc settings
+include ~/.config/sway/setup/misc
+
+# Windows/marks/dmenu scripts
+include ~/.config/sway/setup/fzfify
+
+# Auto start applications
+include ~/.config/sway/setup/applications
+
+# Include sway configs
+include /etc/sway/config.d/*
+exec_always "systemctl --user start sway-session.target"

@@ -1,0 +1,23 @@
+### Auto start applications
+#
+# Applets:
+#
+# NetworkManager applet
+  exec --no-startup-id nm-applet --indicator
+
+# Bluetooth applet
+  exec --no-startup-id blueman-applet
+#
+# Apps:
+#
+  focus output $primary
+  assign [app_id="Slack"] workspace number 7
+  exec slack --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer
+  assign [class="discord"] workspace number 8
+  exec discord 
+  assign [class="thunderbird"] workspace number 9
+  exec thunderbird
+  for_window [class="Spotify"] move window to workspace number 10
+  exec spotify
+  assign [class="firefox"] workspace number 1
+  exec firefox

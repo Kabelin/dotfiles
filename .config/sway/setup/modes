@@ -1,0 +1,59 @@
+### Modes
+#
+# Resizing containers:
+#
+  $resize_mode {
+    bindsym {
+      # left will shrink the containers width
+      # right will grow the containers width
+      # up will shrink the containers height
+      # down will grow the containers height
+      $left  resize shrink width   10px
+      $down  resize grow   height  10px
+      $up    resize shrink height  10px
+      $right resize grow   width   10px
+
+      # Ditto, with arrow keys
+      Left  resize shrink width   10px
+      Down  resize grow   height  10px
+      Up    resize shrink height  10px
+      Right resize grow   width   10px
+
+      # Return to default mode
+      Return $default_mode
+      Escape $default_mode
+    }
+  }
+  bindsym $mod+r $resize_mode
+# 
+# Take screenshots:
+#
+  $screenshot_mode {
+    bindsym {
+      s       $default_mode; exec grimshot save     area -    | swappy -f -
+      Shift+c $default_mode; exec grimshot --notify save area
+      c       $default_mode; exec grimshot --notify copy area
+
+      # Return to default mode
+      Return $default_mode
+      Escape $default_mode
+    }
+  }
+  bindsym $mod+p $screenshot_mode
+# 
+# Menu:
+#
+  $menu_mode {
+    bindsym {
+      l   $default_mode;  exec      '$locker'
+      o   $default_mode;  swaymsg   exit
+      r   exec            systemctl -i        reboot
+      s   exec            systemctl -i        poweroff
+      u   $default_mode;  systemctl suspend
+
+      # Return to default mode
+      Return $default_mode
+      Escape $default_mode
+    }
+  }
+  bindsym $mod+m $menu_mode

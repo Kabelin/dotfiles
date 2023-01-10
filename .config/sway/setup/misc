@@ -1,0 +1,56 @@
+### Misc settings
+#
+# Bar:
+#
+  bar swaybar_command waybar
+#
+# Window related:
+#
+  # Borders and gaps
+  default_border pixel 1
+  default_floating_border pixel 1
+  font pango:monospace 0.001
+  titlebar_border_thickness 0
+  titlebar_padding 0 1
+  gaps inner 5
+  smart_borders on
+  mouse_warping output
+
+  # Colors
+
+  # target                 title     bg    text   indicator  border
+  client.focused           $blue     $base $text  $rosewater $blue
+  client.focused_inactive  $sky      $base $text  $rosewater $sky
+  client.unfocused         $sky      $base $text  $rosewater $sky
+  client.urgent            $red      $base $text  $overlay0  $red
+  client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+  client.background        $base
+
+  # Drag floating windows by holding down $mod and left mouse button.
+  # Resize them with right mouse button + $mod.
+  # Despite the name, also works for non-floating windows.
+  # Change normal to inverse to use left mouse button for resizing and right
+  # mouse button for dragging.
+  floating_modifier Alt normal
+
+  # Transparency
+  # for_window [class=".*"] opacity $opacity
+  # for_window [app_id=".*"] opacity $opacity
+
+  # Disable idle when fullscreen window available
+  for_window [class=".*"] inhibit_idle fullscreen
+  for_window [app_id=".*"] inhibit_idle fullscreen
+#
+# Clamshell mode
+#
+  # Handle lid status
+  bindswitch --reload --locked lid:on output $secondary disable
+  bindswitch --reload --locked lid:off output $secondary enable
+#
+# Browser picture-in-picture mode
+#
+  for_window [title="^Picture-in-Picture$"] floating enable, move position 1564 840, resize set width 356px height 200px, sticky enable, border none
+#
+# Kill sharing indicator (should work for chrome and firefox)
+#
+  for_window [title=".+[Ss]haring (Indicator|your screen)"] kill

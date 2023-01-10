@@ -1,0 +1,31 @@
+### Input configuration
+#
+# Setup:
+#
+  # Hide mouse cursor after 6000 ms
+  seat {
+    * hide_cursor when-typing enable
+    seat0 xcursor_theme $cursor_theme $cursor_size
+  }
+
+  # Mouse
+  input type:pointer {
+    pointer_accel -0.25 
+    scroll_factor 1
+    dwt enabled
+  }
+
+  # Keyboard
+  input type:keyboard {
+    xkb_layout br   
+    xkb_options ctrl:nocaps
+  }
+
+  # Touchpad
+  input type:touchpad {
+    tap enabled
+    dwt enabled
+    drag enabled
+    accel_profile "flat"
+    pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
+  }
