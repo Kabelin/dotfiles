@@ -1,0 +1,53 @@
+# Config for workstyle
+#
+# Format:
+# "pattern" = "icon"
+#
+# The pattern will be used to match against the application name, class_id or WM_CLASS.
+# The icon will be used to represent that application.
+#
+# Note if multiple patterns are present in the same application name,
+# precedence is given in order of apparition in this file.
+
+# Sometimes icons are prepended with "\u200e" in order to prevent reversed icons: https://github.com/pierrechevalier83/workstyle/issues/38
+
+"nvim" = ""
+"slack" = ""
+"github" = ""
+"hacker news" = ""
+"google" = ""
+"private browsing" = ""
+"youtube" = ""
+"firefox" = ""
+"opera" = ""
+"e2e" = "\u200eﭧ"
+"chromium" = ""
+"alacritty" = ""
+"kitty" = ""
+"nautilus" = ""
+"libreoffice calc" = ""
+"libreoffice writer" = ""
+"libreoffice" = ""
+"eog" = ""
+"calculator" = ""
+"transmission" = "\u200eﯲﯴ"
+"videostream" = ""
+"mpv" = ""
+"music" = ""
+"disk usage" = ""
+"zathura" = ""
+"spotify" = "阮"
+"thunderbird" = ""
+"discord" = "\u200eﭮ"
+"code" = ""
+"kdeconnect" = ""
+"nwg-look" = "漣"
+"obs" = "辶"
+"swappy" = ""
+"firewall" = "廬"
+"gucharmap" = ""
+"steam" = ""
+
+[other]
+fallback_icon = ""
+deduplicate_icons = true

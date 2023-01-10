@@ -1,0 +1,41 @@
+#
+## Options
+#
+  # Defines which auto adjustment mode should be used if a document is loaded. Possible options are "best-fit" and "width".
+  set adjust-open "width"
+
+  # En/Disables recoloring
+  set recolor "true"
+
+  # Use basename of the file in the window title.
+  set window-title-basename "true"
+
+  # Display a short version of the file path, which replaces $HOME with ~, in the window title.Display a short version of the file path, which replaces $HOME with ~, in the window title.
+  set window-title-home-tilde "true"    
+
+  # Use basename of the file in the statusbar.
+  set statusbar-basename "true"
+
+  # Display (current page / total pages) as a percent in the statusbar.
+  set statusbar-page-percent "true"
+
+  # Display a short version of the file path, which replaces $HOME with ~, in the statusbar.
+  set statusbar-home-tilde "true"
+
+  # Defines the X clipboard into which mouse-selected data will be written. When it is "clipboard", selected data will be written to the CLIPBOARD clipboard, and can be pasted using the Ctrl+v key combination. When it is "primary", selected data will be written to the PRIMARY clipboard, and can be pasted using the middle mouse button, or the Shift-Insert key combination.
+  set selection-clipboard "clipboard"
+
+#
+## Mappings
+#
+  # Scroll.
+  map u scroll half-up
+  map d scroll half-down
+
+  # Toggle between one and multiple pages per row.
+  map D toggle_page_mode
+
+  # Show the print dialog.
+  map p print
+
+  include catppuccin-mocha
