@@ -1,0 +1,11 @@
+[Unit]
+Description=Make inactive windows in sway semi-transparent
+BindsTo=sway-session.target
+
+[Service]
+ExecStart=%h/.local/bin/sway-inactive-window-transparency
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=sway-session.target
