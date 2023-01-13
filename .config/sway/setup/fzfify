@@ -1,0 +1,13 @@
+### fzfify - windows manager and dmenu
+#
+# Setup:
+#
+  # any window with the title "fzf-switcher" will be floating
+  for_window [title="fzf-switcher"] floating enable
+#
+# Key bindings: 
+#
+  # bindsym $mod+d exec 'THEME=$theme ~/.config/sway/scripts/sway-dmenu'
+  # bindsym $mod+m exec 'THEME=$theme ~/.config/sway/scripts/sway-marks-switcher'
+  # bindsym $mod+n exec 'THEME=$theme ~/.config/sway/scripts/sway-mark'
+  bindsym $mod+c exec 'RUST_BACKTRACE=full ~/.config/sway/scripts/sway-tree-switcher 2> /tmp/sway-tree-switcher'

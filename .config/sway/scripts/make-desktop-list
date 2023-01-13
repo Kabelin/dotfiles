@@ -1,0 +1,48 @@
+#!/bin/bash
+
+rm_field_codes() {
+  str=$1
+  str=${str//\%f/}
+  str=${str//\%F/}
+  str=${str//\%u/}
+  str=${str//\%U/}
+  str=${str//\%d/}
+  str=${str//\%D/}
+  str=${str//\%n/}
+  str=${str//\%N/}
+  str=${str//\%i/}
+  str=${str//\%c/}
+  str=${str//\%k/}
+  str=${str//\%v/}
+  str=${str//\%m/}
+  echo $str
+}
+
+declare -A name_to_exec
+for p in $(fd -H -i -t f -t l --glob "*.desktop" \
+  /usr/share/applications \
+  /usr/local/share/applications \
+  ~/.local/share/applications 2> /dev/null); do
+
+  if [ ! -f "$p" ]; then
+    continue
+  fi
+
+  readarray -t name_and_exec <<< $(cat $p | grep -m 2 -we "Name=.*" -we "Exec=.*")
+  exec=${name_and_exec[0]#*=}
+  name=${name_and_exec[1]#*=}
+  if [[ -n $name ]] && [[ -n $exec ]]; then 
+    name_to_exec[$name]=$exec
+  fi
+done
+
+# build fzf string
+IFS=$'\n'
+apps=""
+for key in "${!name_to_exec[@]}"; do
+  ex=$(rm_field_codes ${name_to_exec[$key]})
+  ex=${ex##*/}
+  apps="$apps\n $key : $ex"
+done
+
+sort -k3 <<<"$(printf "%s\n" "$apps")"
