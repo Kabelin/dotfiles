@@ -8,8 +8,6 @@
 # Bluetooth applet
   exec --no-startup-id blueman-applet
 
-# Display keys
-  # exec --no-startup-id wshowkeys -b '#1e1e2e' -f '#cdd6f4' -s '#89b4fa' -F 'FiraCode Nerd Font 20' -t 1 -a bottom
 #
 # Apps:
 #

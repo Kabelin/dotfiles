@@ -1,0 +1,12 @@
+[Unit]
+Description=Displays keypresses on screen
+BindsTo=sway-session.target
+
+[Service]
+ExecStart=wshowkeys -b '#1e1e2e' -f '#cdd6f4' -s '#89b4fa' -F 'FiraCode Nerd Font 20' -t 1 -a bottom
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=sway-session.target
+
