@@ -17,7 +17,7 @@
 
   # Keyboard
   input type:keyboard {
-    xkb_layout br   
+    xkb_layout br
     xkb_options ctrl:nocaps
   }
 

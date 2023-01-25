@@ -21,7 +21,10 @@
     $right l
 
     # Terminal emulator
-    $term alacritty
+    $term wezterm
+
+    # Player
+    $player playerctl -p spotify
  
     # Output
     $primary HDMI-A-1
