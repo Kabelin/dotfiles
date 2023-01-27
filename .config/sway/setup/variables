@@ -31,7 +31,7 @@
     $secondary eDP-1
 
     # Launcher
-    $menu kickoff
+    $menu tofi-drun | xargs swaymsg exec --
 
     # Backgrounds
     $default_background /usr/share/backgrounds/catppuccin/street.jpg
