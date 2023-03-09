@@ -5,6 +5,7 @@ SETUVAR --export NNN_BMS:d\x3a\x7e/Downloads/\x3bD\x3a\x7e/Documents/\x3bp\x3a\x
 SETUVAR --export NNN_FIFO:/tmp/nnn\x2efifo
 SETUVAR --export NNN_PLUG:x\x3a\x21chmod\x20\x2bx\x20\x24nnn\x3bd\x3adragdrop\x3bv\x3aimgview\x3bk\x3akdeconnect\x3bp\x3apreview\x2dtui\x3bc\x3acdpath
 SETUVAR --export NNN_TRASH:1
+SETUVAR --export TERM:screen\x2d256color
 SETUVAR --export TERMINAL:wezterm
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:6c7086
