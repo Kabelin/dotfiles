@@ -30,7 +30,7 @@ normal_mode["<A-h>"] = ":BufferLineCyclePrev<CR>"
 normal_mode[";"] = ":"
 normal_mode["n"] = "nzzzv"
 normal_mode["N"] = "Nzzzv"
-normal_mode["<leader>s"] = ":%s/\\<<C-r><C-w>\\>//g<left><left>"
+normal_mode["<S-s>"] = ":%s/\\<<C-r><C-w>\\>//g<left><left>"
 normal_mode["H"] = "^"
 normal_mode["L"] = "$"
 normal_mode["<C-d>"] = "<C-d>zz"
@@ -45,21 +45,19 @@ visual_mode["L"] = "$"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+local _, actions = pcall(require, "telescope.actions")
+lvim.builtin.telescope.defaults.mappings = {
+  -- for input mode
+  i = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+  },
+  -- for normal mode
+  n = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+  },
+}
 
 -- Change theme settings
 -- lvim.builtin.theme.options.dim_inactive = true
