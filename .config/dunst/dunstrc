@@ -211,7 +211,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/kickoff --from-stdin
+    dmenu = /usr/bin/tofi
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
