@@ -103,7 +103,7 @@
 
 	# Selection text
 	selection-color = #b4befe
-	selection-background = #1e1e2e
+	selection-background = #313244
 	selection-background-padding = 0
 	selection-background-corner-radius = 0
 
@@ -117,7 +117,7 @@
 	# Style of the optional text cursor.
 	#
 	# Supported values: bar, block, underscore
-	text-cursor-style = block
+	# text-cursor-style = block
 
 	# Color of the text cursor
 	#
@@ -130,7 +130,7 @@
 	# text-cursor-background = #000000
 
 	# Corner radius of the text cursor
-	text-cursor-corner-radius = 0
+	# text-cursor-corner-radius = 0
 
 	# Thickness of the bar and underscore text cursors.
 	#
@@ -174,7 +174,7 @@
 	background-color = #1e1e2e
 
 	# Width of the border outlines in pixels.
-	outline-width = 2
+	outline-width = 0
 
 	# Border outline color
 	outline-color = #1e1e2e
@@ -239,7 +239,7 @@
 	hide-cursor = false
 
 	# Show a text cursor in the input field.
-	text-cursor = false
+	# text-cursor = false
 
 	# Sort results by number of usages in run and drun modes.
 	history = true
