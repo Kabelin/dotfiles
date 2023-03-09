@@ -24,7 +24,7 @@ filteredArray=("${files[@]}")
 
 while true; do
 	img="${filteredArray[RANDOM % ${#filteredArray[@]}]}"
-	swww img "$img" -o "HDMI-A-1" --transition-fps 60 --filter "Nearest"
+	swww img "$img" -o "HDMI-A-1" --transition-fps 60 --filter "Nearest" --transition-type "random"
 
 	filteredArray=("${files[@]}")
 	for index in "${!filteredArray[@]}"; do [[ "${filteredArray[index]}" = "$img" ]] && unset -v 'filteredArray[$index]'; done
