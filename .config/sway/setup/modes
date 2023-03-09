@@ -47,8 +47,8 @@
     bindsym {
       l   $default_mode;  exec      '$locker'
       o   $default_mode;  swaymsg   exit
-      r   exec            systemctl -i        reboot
-      s   exec            systemctl -i        poweroff
+      r   exec            systemctl           reboot
+      s   exec            systemctl           poweroff
       u   $default_mode;  systemctl suspend
 
       # Return to default mode
