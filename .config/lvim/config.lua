@@ -47,16 +47,16 @@ visual_mode["L"] = "$"
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
-  -- for input mode
-  i = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-  },
-  -- for normal mode
-  n = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-  },
+	-- for input mode
+	i = {
+		["<C-j>"] = actions.move_selection_next,
+		["<C-k>"] = actions.move_selection_previous,
+	},
+	-- for normal mode
+	n = {
+		["<C-j>"] = actions.move_selection_next,
+		["<C-k>"] = actions.move_selection_previous,
+	},
 }
 
 -- Change theme settings
@@ -212,3 +212,8 @@ lvim.plugins = {
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+-- close quickfix menu after selecting option
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "qf" },
+	command = "nnoremap <buffer> <CR> <CR>:cclose<CR>"
+})
