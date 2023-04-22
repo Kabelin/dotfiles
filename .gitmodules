@@ -1,3 +1,9 @@
 [submodule ".config/alacritty/catppuccin"]
 	path = .config/alacritty/catppuccin
 	url = https://github.com/catppuccin/alacritty.git
+[submodule ".config/nsxiv"]
+	path = .config/nsxiv
+	url = https://codeberg.org/Kabelin/nsxiv
+[submodule ".config/xdg-desktop-portal-termfilechooser"]
+	path = .config/xdg-desktop-portal-termfilechooser
+	url = https://github.com/Kabelin/xdg-desktop-portal-termfilechooser
