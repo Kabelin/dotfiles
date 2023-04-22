@@ -12,3 +12,6 @@ source ~/.asdf/asdf.fish
 
 # Load starship prompt
 starship init fish | source
+
+# Abbreviations
+abbr -a -- n nnn
