@@ -54,3 +54,7 @@
 # Kill sharing indicator (should work for chrome and firefox)
 #
   for_window [title=".+[Ss]haring (Indicator|your screen)"] kill
+#
+# Enable floating for file manager
+#
+  for_window [app_id="File Manager"] floating enable
