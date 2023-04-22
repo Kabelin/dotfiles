@@ -13,7 +13,7 @@
 #
   focus output $primary
   assign [app_id="Slack"] workspace number 7
-  exec slack --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer
+  # exec slack --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer
   assign [class="discord"] workspace number 8
   exec discord 
   assign [class="thunderbird"] workspace number 9
