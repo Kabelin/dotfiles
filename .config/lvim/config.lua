@@ -20,20 +20,26 @@ lvim.leader = "space"
 local normal_mode = lvim.keys.normal_mode
 local visual_mode = lvim.keys.visual_mode
 
-normal_mode["<C-s>"] = ":w<cr>"
+-- split windows
+normal_mode["<C-s>"] = "<C-w>s"
+normal_mode["<C-v>"] = "<C-w>v"
+-- navigate between tabs
 normal_mode["<A-l>"] = ":BufferLineCycleNext<CR>"
 normal_mode["<A-h>"] = ":BufferLineCyclePrev<CR>"
 normal_mode[";"] = ":"
 normal_mode["n"] = "nzzzv"
 normal_mode["N"] = "Nzzzv"
+-- replace all occurrences of word under cursor
 normal_mode["<S-s>"] = ":%s/\\<<C-r><C-w>\\>//g<left><left>"
+-- better line navigation
 normal_mode["H"] = "^"
 normal_mode["L"] = "$"
+visual_mode["H"] = "^"
+visual_mode["L"] = "$"
+-- scroll with centralize
 normal_mode["<C-d>"] = "<C-d>zz"
 normal_mode["<C-u>"] = "<C-u>zz"
 normal_mode["<S-x>"] = ":BufferKill<CR>"
-visual_mode["H"] = "^"
-visual_mode["L"] = "$"
 
 -- -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
@@ -168,6 +174,16 @@ lvim.plugins = {
 		cmd = "TroubleToggle",
 	},
 	{ "catppuccin/nvim", name = "catppuccin" },
+	{
+		"sindrets/diffview.nvim",
+		event = "BufRead",
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
