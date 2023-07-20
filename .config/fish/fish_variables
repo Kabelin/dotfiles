@@ -6,9 +6,9 @@ SETUVAR --export NNN_BMS:d\x3a\x7e/Downloads/\x3bD\x3a\x7e/Documents/\x3bp\x3a\x
 SETUVAR --export NNN_CONVERT:1
 SETUVAR --export NNN_FIFO:/tmp/nnn\x2efifo
 SETUVAR --export NNN_ICONLOOKUP:1
-SETUVAR --export NNN_OPTS:er
+SETUVAR --export NNN_OPENER:/home/vitor/\x2econfig/nnn/plugins/nuke
+SETUVAR --export NNN_OPTS:rc
 SETUVAR --export NNN_PLUG:x\x3a\x21chmod\x20\x2bx\x20\x24nnn\x3bd\x3adragdrop\x3bv\x3aimgview\x3bk\x3akdeconnect\x3bp\x3apreview\x2dtui\x3bc\x3acdpath
-SETUVAR --export NNN_PREVIEWDIR:\x1d
 SETUVAR --export NNN_SPLIT:v
 SETUVAR --export NNN_TERMINAL:wezterm
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/home/vitor/\x2econfig/\x2eripgreprc
