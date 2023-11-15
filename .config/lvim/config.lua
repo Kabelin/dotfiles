@@ -8,6 +8,7 @@ opt.tabstop = 2
 -- general
 lvim.log.level = "info"
 lvim.colorscheme = "catppuccin-mocha"
+lvim.transparent_window = true
 
 lvim.format_on_save = {
 	enabled = true,
@@ -107,8 +108,6 @@ builtin.treesitter.ensure_installed = {
 	"sql",
 }
 
-builtin.treesitter.highlight.enable = true
-
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
 -- --- disable automatic installation of servers
@@ -173,7 +172,16 @@ lvim.plugins = {
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
 	},
-	{ "catppuccin/nvim", name = "catppuccin" },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		config = function()
+			require("catppuccin").setup({
+				transparent_background = true, -- disables setting the background color.
+				show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
+			})
+		end,
+	},
 	{
 		"sindrets/diffview.nvim",
 		event = "BufRead",
@@ -182,6 +190,23 @@ lvim.plugins = {
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup()
+		end,
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup(
+				{ "css", "scss", "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+				{
+					RGB = true, -- #RGB hex codes
+					RRGGBB = true, -- #RRGGBB hex codes
+					RRGGBBAA = true, -- #RRGGBBAA hex codes
+					rgb_fn = true, -- CSS rgb() and rgba() functions
+					hsl_fn = true, -- CSS hsl() and hsla() functions
+					css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+					css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+				}
+			)
 		end,
 	},
 }

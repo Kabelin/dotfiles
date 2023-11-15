@@ -1,0 +1,10 @@
+[Unit]
+Description=Eww daemon
+BindsTo=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/eww daemon --no-daemonize
+
+[Install]
+WantedBy=graphical-session.target
+

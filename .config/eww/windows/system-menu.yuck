@@ -1,0 +1,76 @@
+(defvar GB 1024000000)
+(defvar MB 1024000)
+
+(defwidget system-menu []
+  (box ; time & date
+    :class "system-menu-box"
+    :space-evenly true
+
+    ; cpu
+    (box
+      :class "sys-box"
+      :space-evenly false
+      :halign "start"
+      (circular-progress
+        :value "${EWW_CPU.avg}"
+        :class "sys-cpu"
+        :thickness 3
+        (label
+          :text "󰘚"
+          :class "sys-icon-cpu icon"))
+      (box
+        :class "text"
+        :orientation "v"
+        :vexpand false
+        (label
+          :text "CPU"
+          :halign "start"
+          :class "sys-text-cpu")
+        (label
+          :text "${round(EWW_CPU.avg,2)}%"
+          :halign "start"
+          :class "sys-text-sub")
+        (label
+          :text "${EWW_CPU.cores[0].freq} MHz"
+          :halign "start"
+          :class "sys-text-sub")))
+
+    ; memory
+    (box
+      :class "sys-box"
+      :space-evenly false
+      :halign "end"
+      (circular-progress
+        :value {EWW_RAM.used_mem_perc}
+        :class "sys-mem"
+        :thickness 3
+        (label
+          :text "󰍛"
+          :class "sys-icon-mem icon"))
+      (box
+        :class "text"
+        :orientation "v"
+        (label
+          :text "Memory"
+          :halign "start"
+          :class "sys-text-mem")
+        (label
+          :text {EWW_RAM.used_mem / GB < 1 ? "${round(EWW_RAM.used_mem / MB, 1)} M used" : "${round(EWW_RAM.used_mem / GB, 1)} G used"}
+          :halign "start"
+          :class "sys-text-sub")
+        (label
+          :text {EWW_RAM.total_mem / GB < 1 ? "${round(EWW_RAM.total_mem / MB, 1)} M total" : "${round(EWW_RAM.total_mem / GB, 1)} G total"}
+          :halign "start"
+          :class "sys-text-sub")))))
+
+
+(defwindow system-menu
+  :stacking "fg" 
+  :monitor 0
+  :geometry (geometry
+    :x "0"
+    :y "0"
+    :width "0%"
+    :height "0%"
+    :anchor "right top")
+  (system-menu))
