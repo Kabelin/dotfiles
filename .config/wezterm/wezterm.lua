@@ -19,6 +19,8 @@ return {
 	},
 	check_for_updates = false,
 	window_background_opacity = 0.9,
+	-- Patch crash when opening with wayland: https://github.com/wez/wezterm/issues/4483
+	enable_wayland = false,
 
 	keys = {
 		{ key = "N", mods = hyper, action = act.SpawnWindow },
