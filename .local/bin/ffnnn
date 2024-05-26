@@ -1,0 +1,24 @@
+#!/bin/sh
+save="$3"
+suggest="$4"
+out="$5"
+file="${suggest##/*/}"
+picker_out="/tmp/picker_out"
+
+if [ "$save" = 1 ]; then
+  touch "$suggest"
+fi
+
+wezterm start --class "File Manager" --always-new-process -- sh -c "nnn -p - '$suggest' | awk '{ print system(\"[ -d '\''\"\$0\"'\'' ]\") ? \$0 : \$0\"/$file\" }' > $picker_out"
+
+if [ "$save" = 1 ]; then
+  if [ ! -s "$out" ] || [ ! -s "$suggest" ]; then
+    rm "$suggest"
+  fi
+fi
+
+if [ ! -s "$picker_out"]; then
+  echo "There is no selected path"; exit 1
+fi
+
+cat $picker_out >> $out

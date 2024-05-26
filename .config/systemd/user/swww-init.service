@@ -1,0 +1,11 @@
+[Unit]
+Description=Swww daemon
+BindsTo=graphical-session.target
+
+[Service]
+Type=forking
+ExecStart=swww init --no-cache
+ExecStop=swww kill
+
+[Install]
+WantedBy=graphical-session.target

@@ -28,13 +28,14 @@
 @import 'css/sidebar';
 @import 'css/system';
 @import 'css/volume';
+@import 'css/tray';
 
 .bar {
   background-color: $bg;
   color: $fg;
 
   label {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .text {
@@ -44,11 +45,12 @@
 
 tooltip {
   background: $bg;
-  border: 1px solid $border;
+  border: 2px solid $border;
   border-radius: 8px;
 
   label {
-    font-size: 1rem;
+    padding: 2px;
+    font-size: 1.2rem;
   }
 }
 
@@ -69,7 +71,7 @@ tooltip {
   margin-right: 15px;
 
   label {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -78,7 +80,7 @@ tooltip {
 .module-bt { font-size: 1.2rem; }
 
 /* scales */
-scale trough {
+scale through {
   background-color: $bg1;
   border-radius: 24px;
   margin: 0 1rem;
@@ -89,7 +91,7 @@ scale trough {
 /* workspaces */
 .focused {
   background-color: $bg;
-  border-radius: 1rem;
+  border-radius: .5rem;
   margin: .3rem;
   padding: .25rem;
 }
@@ -98,6 +100,7 @@ scale trough {
 
 
 .ws {
+  padding: .2rem;
   border-radius: 2rem;
-  margin: .7rem .25rem;
+  margin: .8rem .3rem;
 }

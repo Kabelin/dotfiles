@@ -1,0 +1,26 @@
+#!/bin/bash
+
+paused_notifications=0
+
+fullscreen_handle() {
+	case $1 in
+	0) systemctl --user start wlsunset.service ;;
+	1) systemctl --user stop wlsunset.service ;;
+	esac
+}
+
+handle() {
+	case $1 in
+	screencast*) if [ "$paused_notifications" -eq 1 ]; then
+		paused_notifications=0
+		dunstctl set-paused false
+	else
+		paused_notifications=1
+		dunstctl set-paused true
+	fi ;;
+	urgent*) hyprctl dispatch focusurgentorlast ;;
+	fullscreen*) fullscreen_handle "${1: -1}" ;;
+	esac
+}
+
+socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handle "$line"; done

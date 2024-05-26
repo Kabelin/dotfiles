@@ -15,7 +15,7 @@
   .date-box {
     margin: 0 1rem;
 
-    label { font-size: 1.1rem; }
+    label { font-size: 1.2rem; }
 
     .date {
       background: unset;
@@ -79,7 +79,7 @@
     margin-right: -1rem;
     min-width: 21.5rem;
 
-    trough { margin-right: 0; }
+    through { margin-right: 0; }
   }
 
   box { margin: .2rem 0; }
@@ -88,7 +88,7 @@
 
 .volume-slider-box,
 .brightness-slider-box {
-  trough { background-color: $base; }
+  through { background-color: $base; }
 }
 
 .volume-bar highlight {

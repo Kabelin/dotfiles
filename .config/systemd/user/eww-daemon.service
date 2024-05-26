@@ -1,0 +1,10 @@
+[Unit]
+Description=Eww daemon
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/eww daemon
+ExecStop=/usr/bin/eww kill
+
+[Install]
+WantedBy=multi-user.target

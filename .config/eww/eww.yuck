@@ -2,11 +2,9 @@
 (include "./variables.yuck")
 
 ; various bar modules
-(include "./modules/bluetooth.yuck")
 (include "./modules/clock.yuck")
-(include "./modules/indicators.yuck")
+(include "./modules/systray.yuck")
 (include "./modules/music.yuck")
-(include "./modules/net.yuck")
 (include "./modules/sys.yuck")
 (include "./modules/volume.yuck")
 (include "./modules/workspaces.yuck")
@@ -34,10 +32,8 @@
   (box
     :space-evenly false
     :halign "end"
-    (indicators)
+    (systray-module)
     (volume-module)
-    (bluetooth)
-    (net)
     (sys)
     (clock_module)))
 

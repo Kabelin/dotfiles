@@ -37,7 +37,7 @@ make_thumbs() {
         case "$mime" in
           audio/*) ffmpeg -i "$target" "$NNN_PREVIEWDIR$target.jpg" -y >/dev/null 2>&1
               ret="$NNN_PREVIEWDIR/$target.jpg" ;;
-          video/*) ffmpegthumbnailer -i "$target" -s 1920 -o "$NNN_PREVIEWDIR$target.jpg" 2> /dev/null
+          video/*) ffmpegthumbnailer -i "$target" -o "$NNN_PREVIEWDIR$target.jpg" 2> /dev/null
               ret="$NNN_PREVIEWDIR/$target.jpg" ;;
           *) ret="$target" ;;
         esac
@@ -48,7 +48,7 @@ make_thumbs() {
                 audio/*) [ "$1" != "sxiv" ] &&
                     ffmpeg -i "$file" "$NNN_PREVIEWDIR$file.jpg" -y >/dev/null 2>&1 ;;
                 video/*) [ "$1" != "ucollage" ] &&
-                    ffmpegthumbnailer -i "$file" -s 1920 -o "$NNN_PREVIEWDIR$file.jpg" 2> /dev/null ;;
+                    ffmpegthumbnailer -i "$file" -o "$NNN_PREVIEWDIR$file.jpg" 2> /dev/null ;;
             esac
         fi
     done
@@ -59,7 +59,7 @@ make_thumbs() {
 }
 
 listimages() {
-    rg --files --max-depth 1 --null "$dir" "$NNN_PREVIEWDIR$dir" 2>/dev/null | sort -z
+    find -L "$dir" "$NNN_PREVIEWDIR$dir" -maxdepth 1 -type f -print0 2>/dev/null | sort -z
 }
 
 view_files() {

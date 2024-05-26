@@ -15,12 +15,6 @@ function n --wraps nnn --description 'support nnn quit and change directory'
         set NNN_TMPFILE "$HOME/.config/nnn/.lastd"
     end
 
-    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-    # stty lnext undef
-
     # The command function allows one to alias this function to `nnn` without
     # making an infinitely recursive alias
     command nnn $argv

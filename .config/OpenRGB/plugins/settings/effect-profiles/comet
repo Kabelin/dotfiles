@@ -1,0 +1,62 @@
+{
+    "Effects": [
+        {
+            "AllowOnlyFirst": false,
+            "AutoStart": true,
+            "Brightness": 100,
+            "ControllerZones": [
+                {
+                    "description": "IT5701-GIGABYTE V4.0.23.2",
+                    "is_segment": false,
+                    "location": "HID: /dev/hidraw8",
+                    "name": "B650M AORUS PRO AX",
+                    "reverse": false,
+                    "segment_idx": -1,
+                    "self_brightness": 100,
+                    "serial": "0x57010100",
+                    "vendor": "Gigabyte",
+                    "version": "0x02170004",
+                    "zone_idx": 0
+                },
+                {
+                    "description": "IT5701-GIGABYTE V4.0.23.2",
+                    "is_segment": false,
+                    "location": "HID: /dev/hidraw8",
+                    "name": "B650M AORUS PRO AX",
+                    "reverse": false,
+                    "segment_idx": -1,
+                    "self_brightness": 100,
+                    "serial": "0x57010100",
+                    "vendor": "Gigabyte",
+                    "version": "0x02170004",
+                    "zone_idx": 1
+                },
+                {
+                    "description": "IT5701-GIGABYTE V4.0.23.2",
+                    "is_segment": false,
+                    "location": "HID: /dev/hidraw8",
+                    "name": "B650M AORUS PRO AX",
+                    "reverse": false,
+                    "segment_idx": -1,
+                    "self_brightness": 100,
+                    "serial": "0x57010100",
+                    "vendor": "Gigabyte",
+                    "version": "0x02170004",
+                    "zone_idx": 2
+                }
+            ],
+            "CustomName": "",
+            "EffectClassName": "Comet",
+            "FPS": 60,
+            "RandomColors": false,
+            "Slider2Val": 80,
+            "Speed": 40,
+            "Temperature": 0,
+            "Tint": 0,
+            "UserColors": [
+                10609574
+            ]
+        }
+    ],
+    "version": 2
+}

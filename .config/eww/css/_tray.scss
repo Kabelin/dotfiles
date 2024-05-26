@@ -1,0 +1,45 @@
+.tray menu {
+  padding: 2px;
+	border-radius: 10px;
+	background-color: $base;
+  border: 2px solid $blue;
+  color: $text;
+
+  label {
+    font-size: 1.2rem;
+  }
+  
+
+	>menuitem {
+		padding: 10px;
+
+		&:disabled label {
+			color: $overlay0;
+		}
+
+		&:hover {
+			background-color: $surface1;
+		}
+
+    &:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+	}
+
+	separator {
+		background-color: $surface1;
+		padding-top: 1px;
+
+		&:last-child {
+			padding: unset;
+		}
+	}
+}
+
+.tray {
+  padding: 5px;
+}

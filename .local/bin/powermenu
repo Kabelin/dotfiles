@@ -1,0 +1,60 @@
+#!/bin/bash
+
+OFF_TIMEOUT=600
+LOCK_TIMEOUT=610
+UNINTENDED_INTERACTION_TIMEOUT=10
+
+# turn off screen
+off="if ! pgrep -x swaylock>/dev/null ; then hyprctl dispatch dpms off ; fi"
+
+# runs swaylock if not already running
+locker="if ! pgrep -x swaylock>/dev/null ; then swaylock --daemonize ; fi"
+
+# if already running locker, call off again
+off_again="if pgrep -x swaylock>/dev/null ; then $off ; fi"
+
+# stop applications/services before lock
+before_lock="playerctl -a pause & \
+  bluetoothctl disconnect & \
+  dunstctl set-paused true & \
+  systemctl --user stop swww.service"
+
+# resume applications/services after unlock
+after_unlock="dunstctl set-paused false & \
+  systemctl --user start swww.service & \
+  systemctl --user restart wlsunset.service"
+
+# timeout $LOCK_TIMEOUT "$locker" \
+idle() {
+	exec swayidle -w \
+		timeout $OFF_TIMEOUT "$off"
+	# timeout $LOCK_TIMEOUT "$before_lock & $locker" \
+	# resume "$after_unlock" \
+	# timeout $UNINTENDED_INTERACTION_TIMEOUT "$off_again"
+}
+
+case "$1" in
+idle)
+	idle
+	;;
+lock)
+	eval $before_lock
+	eval $locker
+	;;
+suspend) # may be broken with hyprland
+	eval $before_lock
+	eval $locker
+	sleep 3 # waiting animation to finish
+	systemctl -i suspend
+	;;
+reboot)
+	systemctl -i reboot
+	;;
+shutdown)
+	systemctl -i poweroff
+	;;
+*)
+	echo "Usage: $0 {idle|lock|suspend|reboot|shutdown}"
+	exit 2
+	;;
+esac

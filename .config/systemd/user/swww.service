@@ -1,12 +1,10 @@
 [Unit]
-Description=Solution to Wayland Wallpaper Woes
+Description=Randomly setting images inside /usr/share/wallpapers as background
 Documentation=file:/usr/share/doc/swww/README.md
-BindsTo=sway-session.target
+BindsTo=graphical-session.target
 
 [Service]
 ExecStart=%h/.local/bin/swww-randomize
-Restart=always
-RestartSec=1
 
 [Install]
-WantedBy=sway-session.target
+WantedBy=graphical-session.target

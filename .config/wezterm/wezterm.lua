@@ -2,13 +2,14 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 -- Moonlander extra keys
-local meh = "ALT|SHIFT|CTRL"
-local hyper = "ALT|SHIFT|CTRL|CMD"
+local mod = "CTRL"
+local modAlt = "CTRL|SHIFT"
 
 return {
 	color_scheme = "Catppuccin Mocha",
 	font = wezterm.font("FiraCode Nerd Font"),
-	use_fancy_tab_bar = false,
+	font_size = 14,
+	use_fancy_tab_bar = true,
 	hide_tab_bar_if_only_one_tab = true,
 	tab_bar_at_bottom = true,
 	window_padding = {
@@ -21,43 +22,146 @@ return {
 	window_background_opacity = 0.9,
 	-- Patch crash when opening with wayland: https://github.com/wez/wezterm/issues/4483
 	enable_wayland = false,
+	warn_about_missing_glyphs = false,
+	max_fps = 160,
+
+	window_frame = {
+		-- The font used in the tab bar.
+		-- Roboto Bold is the default; this font is bundled
+		-- with wezterm.
+		-- Whatever font is selected here, it will have the
+		-- main font setting appended to it to pick up any
+		-- fallback fonts you may have used there.
+		font = wezterm.font({ family = "FiraCode Nerd Font", weight = "Bold" }),
+
+		-- The size of the font in the tab bar.
+		-- Default to 10.0 on Windows but 12.0 on other systems
+		font_size = 12.0,
+
+		-- The overall background color of the tab bar when
+		-- the window is focused
+		active_titlebar_bg = "#1e1e2e",
+
+		-- The overall background color of the tab bar when
+		-- the window is not focused
+		inactive_titlebar_bg = "#313244",
+	},
+
+	colors = {
+		tab_bar = {
+			-- The active tab is the one that has focus in the window
+			active_tab = {
+				-- The color of the background area for the tab
+				bg_color = "#11111b",
+				-- The color of the text for the tab
+				fg_color = "#cdd6f4",
+
+				-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
+				-- label shown for this tab.
+				-- The default is "Normal"
+				intensity = "Bold",
+
+				-- Specify whether you want "None", "Single" or "Double" underline for
+				-- label shown for this tab.
+				-- The default is "None"
+				underline = "None",
+
+				-- Specify whether you want the text to be italic (true) or not (false)
+				-- for this tab.  The default is false.
+				italic = true,
+
+				-- Specify whether you want the text to be rendered with strikethrough (true)
+				-- or not for this tab.  The default is false.
+				strikethrough = false,
+			},
+
+			-- Inactive tabs are the tabs that do not have focus
+			inactive_tab = {
+				bg_color = "#313244",
+				fg_color = "#cdd6f4",
+
+				-- The same options that were listed under the `active_tab` section above
+				-- can also be used for `inactive_tab`.
+
+				intensity = "Half",
+			},
+
+			-- You can configure some alternate styling when the mouse pointer
+			-- moves over inactive tabs
+			inactive_tab_hover = {
+				bg_color = "#45475a",
+				fg_color = "#cdd6f4",
+				italic = true,
+
+				-- The same options that were listed under the `active_tab` section above
+				-- can also be used for `inactive_tab_hover`.
+			},
+
+			-- The new tab button that let you create new tabs
+			new_tab = {
+				bg_color = "#11111b",
+				fg_color = "#89b4fa",
+
+				-- The same options that were listed under the `active_tab` section above
+				-- can also be used for `new_tab`.
+			},
+
+			-- You can configure some alternate styling when the mouse pointer
+			-- moves over the new tab button
+			new_tab_hover = {
+				bg_color = "#45475a",
+				fg_color = "#89b4fa",
+				italic = true,
+
+				-- The same options that were listed under the `active_tab` section above
+				-- can also be used for `new_tab_hover`.
+			},
+
+			-- The color of the inactive tab bar edge/divider
+			inactive_tab_edge = "#89b4fa",
+		},
+	},
+
+	unix_domains = {
+		{
+			name = "main",
+		},
+	},
+
+	default_gui_startup_args = { "connect", "main" },
 
 	keys = {
-		{ key = "N", mods = hyper, action = act.SpawnWindow },
-		{ key = "F", mods = meh, action = act.ToggleFullScreen },
-		{ key = "T", mods = meh, action = act.SpawnTab("CurrentPaneDomain") },
-		{ key = "W", mods = meh, action = act.CloseCurrentPane({ confirm = true }) },
-		{ key = "1", mods = meh, action = act.ActivateTab(0) },
-		{ key = "2", mods = meh, action = act.ActivateTab(1) },
-		{ key = "3", mods = meh, action = act.ActivateTab(2) },
-		{ key = "4", mods = meh, action = act.ActivateTab(3) },
-		{ key = "5", mods = meh, action = act.ActivateTab(4) },
-		{ key = "U", mods = hyper, action = act.ScrollByPage(-1) },
-		{ key = "D", mods = meh, action = act.ScrollByPage(1) },
-		{ key = "R", mods = meh, action = act.ReloadConfiguration },
-		{ key = "F", mods = meh, action = act.Search("CurrentSelectionOrEmptyString") },
-		{ key = "C", mods = hyper, action = act.ActivateCopyMode },
-		{ key = "c", mods = hyper, action = act.ActivateCopyMode },
-		{ key = "S", mods = hyper, action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-		{ key = "S", mods = meh, action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-		{ key = "LeftArrow", mods = meh, action = act.AdjustPaneSize({ "Left", 1 }) },
-		{ key = "RightArrow", mods = meh, action = act.AdjustPaneSize({ "Right", 1 }) },
-		{ key = "UpArrow", mods = hyper, action = act.AdjustPaneSize({ "Up", 1 }) },
-		{ key = "DownArrow", mods = hyper, action = act.AdjustPaneSize({ "Down", 1 }) },
-		{ key = "Z", mods = meh, action = act.TogglePaneZoomState },
-		{ key = "LeftArrow", mods = meh, action = act.ActivatePaneDirection("Left") },
-		{ key = "RightArrow", mods = meh, action = act.ActivatePaneDirection("Right") },
-		{ key = "UpArrow", mods = hyper, action = act.ActivatePaneDirection("Up") },
-		{ key = "DownArrow", mods = hyper, action = act.ActivatePaneDirection("Down") },
+		{ key = "l", mods = mod, action = act.ActivateTabRelative(1) },
+		{ key = "h", mods = mod, action = act.ActivateTabRelative(-1) },
+		{ key = "n", mods = mod, action = act.SpawnWindow },
+		{ key = "f", mods = mod, action = act.ToggleFullScreen },
+		{ key = "t", mods = mod, action = act.SpawnTab("CurrentPaneDomain") },
+		{ key = "w", mods = modAlt, action = act.CloseCurrentPane({ confirm = true }) },
+		{ key = "u", mods = mod, action = act.ScrollByPage(-1) },
+		{ key = "d", mods = mod, action = act.ScrollByPage(1) },
+		{ key = "r", mods = modAlt, action = act.ReloadConfiguration },
+		{ key = "f", mods = mod, action = act.Search("CurrentSelectionOrEmptyString") },
+		-- { key = "c", mods = modAlt, action = act.ActivateCopyMode },
+		{ key = "S", mods = mod, action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+		{ key = "H", mods = mod, action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "z", mods = modAlt, action = act.TogglePaneZoomState },
+		{ key = "LeftArrow", mods = mod, action = act.ActivatePaneDirection("Left") },
+		{ key = "RightArrow", mods = mod, action = act.ActivatePaneDirection("Right") },
+		{ key = "UpArrow", mods = mod, action = act.ActivatePaneDirection("Up") },
+		{ key = "DownArrow", mods = mod, action = act.ActivatePaneDirection("Down") },
+		{ key = "LeftArrow", mods = modAlt, action = act.AdjustPaneSize({ "Left", 1 }) },
+		{ key = "RightArrow", mods = modAlt, action = act.AdjustPaneSize({ "Right", 1 }) },
+		{ key = "UpArrow", mods = modAlt, action = act.AdjustPaneSize({ "Up", 1 }) },
+		{ key = "DownArrow", mods = modAlt, action = act.AdjustPaneSize({ "Down", 1 }) },
 	},
 
 	key_tables = {
 		copy_mode = {
 			{ key = "q", mods = "NONE", action = act.CopyMode("Close") },
-			{ key = "c", mods = "CTRL", action = act.CopyMode("Close") },
+			{ key = "c", mods = modAlt, action = act.CopyMode("Close") },
 			{ key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
-			{ key = "L", mods = "SHIFT", action = act.CopyMode("MoveToEndOfLineContent") },
-			{ key = "H", mods = "SHIFT", action = act.CopyMode("MoveToStartOfLine") },
+			{ key = "l", mods = "SHIFT", action = act.CopyMode("MoveToEndOfLineContent") },
+			{ key = "h", mods = "SHIFT", action = act.CopyMode("MoveToStartOfLine") },
 			{ key = "w", mods = "NONE", action = act.CopyMode("MoveForwardWord") },
 			{ key = "b", mods = "NONE", action = act.CopyMode("MoveBackwardWord") },
 			{ key = "v", mods = "NONE", action = act.CopyMode({ SetSelectionMode = "Cell" }) },
@@ -107,7 +211,7 @@ return {
 		},
 
 		search_mode = {
-			{ key = "c", mods = "CTRL", action = act.ActivateCopyMode },
+			{ key = "c", mods = modAlt, action = act.ActivateCopyMode },
 			{ key = "Enter", mods = "NONE", action = act.CopyMode("PriorMatch") },
 			{ key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
 			{ key = "n", mods = "CTRL", action = act.CopyMode("NextMatch") },

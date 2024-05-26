@@ -1,0 +1,124 @@
+{
+  "profiles" : [
+    {
+      "profile-name" : "Default",
+      "hostname" : "",
+      "port" : 9091,
+      "rpc-url-path" : "/transmission/rpc",
+      "username" : "",
+      "password" : "",
+      "auto-connect" : true,
+      "ssl" : true,
+      "ssl-validate" : false,
+      "timeout" : 40,
+      "retries" : 3,
+      "update-active-only" : false,
+      "activeonly-fullsync-enabled" : false,
+      "activeonly-fullsync-every" : 2,
+      "update-interval" : 3,
+      "min-update-interval" : 3,
+      "session-update-interval" : 60,
+      "custom-headers" : [],
+      "exec-commands" : [],
+      "destinations" : []
+    }
+  ],
+  "profile-id" : 0,
+  "tree-views" : {
+    "TrgTorrentTreeView" : {
+      "sort-col" : -1,
+      "sort-type" : 0
+    },
+    "TrgTrackersTreeView" : {
+      "sort-col" : -2,
+      "sort-type" : 0,
+      "widths" : [
+        180,
+        252,
+        189,
+        252,
+        261,
+        261,
+        243,
+        236
+      ],
+      "columns" : [
+        "tier",
+        "announce-url",
+        "last-announce-peer-count",
+        "seeder-count",
+        "leecher-count",
+        "last-announce-time",
+        "last-result",
+        "scrape-url"
+      ]
+    },
+    "TrgFilesTreeView" : {
+      "sort-col" : -2,
+      "sort-type" : 0,
+      "widths" : [
+        353,
+        353,
+        389,
+        389,
+        390
+      ],
+      "columns" : [
+        "name",
+        "size",
+        "progress",
+        "wanted",
+        "priority"
+      ]
+    },
+    "TrgPeersTreeView" : {
+      "sort-col" : -2,
+      "sort-type" : 0,
+      "widths" : [
+        196,
+        214,
+        241,
+        268,
+        250,
+        250,
+        223,
+        232
+      ],
+      "columns" : [
+        "ip",
+        "host",
+        "country",
+        "down-speed",
+        "up-speed",
+        "progress",
+        "flags",
+        "client"
+      ]
+    }
+  },
+  "state-selector-last" : 1,
+  "style" : 0,
+  "show-notebook" : true,
+  "start-paused" : true,
+  "add-options-dialog" : true,
+  "delete-local-torrent" : true,
+  "show-state-selector" : true,
+  "filter-dirs" : true,
+  "filter-trackers" : true,
+  "directories-first" : true,
+  "system-tray" : true,
+  "system-tray-minimise" : true,
+  "add-notify" : false,
+  "complete-notify" : true,
+  "window-height" : 1002,
+  "window-width" : 1876,
+  "notebook-paned-pos" : 702,
+  "states-paned-pos" : 154,
+  "exec-commands" : [],
+  "destinations" : [
+    {
+      "label" : "Series",
+      "dir" : "/home/vitor/Torrent/Series"
+    }
+  ]
+}

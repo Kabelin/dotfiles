@@ -1,0 +1,32 @@
+#!/bin/bash
+
+bins=$HOME/.local/bin
+
+systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+hyprctl setcursor Catppuccin-Mocha-Dark-Cursors 24
+
+# System tray
+blueman-applet &
+nm-applet --indicator &
+
+# Clear clipboard cache and start watching
+$bins/clipboard watch &
+
+# Background server
+$bins/swww-randomize loop &
+
+# Automounter for removable media
+udiskie &
+
+# ElKowars wacky widgets (only opening the toolbar for now)
+eww daemon &
+eww open bar &
+
+# Hyprland ipc events handler
+$bins/hyprland-ipc &
+
+# Enable swayidle script
+# $bins/powermenu idle &

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+list() {
+	cliphist list | tofi | cliphist decode | wl-copy
+}
+
+clear_cache() {
+	rm $HOME/.cache/cliphist/db
+}
+
+watch() {
+	clear_cache
+
+	wl-paste --type text --watch cliphist store  # Stores only text data
+	wl-paste --type image --watch cliphist store # Stores only image data
+}
+
+case "$1" in
+watch)
+	watch
+	;;
+clear)
+	clear_cache
+	;;
+*)
+	list
+	;;
+esac

@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenRGB server
+BindsTo=default.target
+After=network.target lm_sensors.service
+
+[Service]
+ExecStart=/usr/bin/openrgb --server
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

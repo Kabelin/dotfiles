@@ -1,0 +1,200 @@
+15:33:32.288: Platform: Wayland
+15:33:32.289: CPU Name: AMD Ryzen 7 7800X3D 8-Core Processor
+15:33:32.289: CPU Speed: 3924.094MHz
+15:33:32.289: Physical Cores: 8, Logical Cores: 16
+15:33:32.289: Physical Memory: 31834MB Total, 647MB Free
+15:33:32.289: Kernel Version: Linux 6.8.9-arch1-2
+15:33:32.289: Distribution: "Arch Linux" Unknown
+15:33:32.289: Desktop Environment: Hyprland
+15:33:32.289: Session Type: wayland
+15:33:32.290: Qt Version: 6.7.0 (runtime), 6.7.0 (compiled)
+15:33:32.290: Portable mode: false
+15:33:32.307: OBS 30.1.2-1 (linux)
+15:33:32.307: ---------------------------------
+15:33:32.307: ---------------------------------
+15:33:32.307: audio settings reset:
+15:33:32.307: 	samples per sec: 48000
+15:33:32.307: 	speakers:        2
+15:33:32.307: 	max buffering:   960 milliseconds
+15:33:32.307: 	buffering type:  dynamically increasing
+15:33:32.309: ---------------------------------
+15:33:32.309: Initializing OpenGL...
+15:33:32.309: Using EGL/Wayland
+15:33:32.332: Initialized EGL 1.5
+15:33:32.340: Loading up OpenGL on adapter AMD AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.8.9-arch1-2)
+15:33:32.340: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.0.6-arch1.2, shading language 4.60
+15:33:32.362: ---------------------------------
+15:33:32.362: video settings reset:
+15:33:32.362: 	base resolution:   3440x1440
+15:33:32.362: 	output resolution: 3440x1440
+15:33:32.362: 	downscale filter:  Bicubic
+15:33:32.362: 	fps:               60/1
+15:33:32.362: 	format:            NV12
+15:33:32.362: 	YUV mode:          Rec. 709/Partial
+15:33:32.363: NV12 texture support enabled
+15:33:32.363: P010 texture support not available
+15:33:32.365: Audio monitoring device:
+15:33:32.365: 	name: Default
+15:33:32.365: 	id: default
+15:33:32.365: ---------------------------------
+15:33:32.370: Failed to load 'en-US' text for module: 'decklink-captions.so'
+15:33:32.375: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+15:33:32.380: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+15:33:32.380: Failed to initialize module 'decklink.so'
+15:33:32.469: [pipewire] Available captures:
+15:33:32.469: [pipewire]     - Desktop capture
+15:33:32.469: [pipewire]     - Window capture
+15:33:32.530: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+15:33:32.530: FFmpeg VAAPI H264 encoding not supported
+15:33:32.530: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+15:33:32.530: FFmpeg VAAPI AV1 encoding not supported
+15:33:32.531: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+15:33:32.531: FFmpeg VAAPI HEVC encoding not supported
+15:33:32.599: ---------------------------------
+15:33:32.599:   Loaded Modules:
+15:33:32.599:     text-freetype2.so
+15:33:32.599:     rtmp-services.so
+15:33:32.599:     obs-x264.so
+15:33:32.599:     obs-webrtc.so
+15:33:32.599:     obs-vst.so
+15:33:32.599:     obs-transitions.so
+15:33:32.599:     obs-qsv11.so
+15:33:32.599:     obs-outputs.so
+15:33:32.599:     obs-libfdk.so
+15:33:32.599:     obs-filters.so
+15:33:32.599:     obs-ffmpeg.so
+15:33:32.599:     linux-v4l2.so
+15:33:32.599:     linux-pulseaudio.so
+15:33:32.599:     linux-pipewire.so
+15:33:32.599:     linux-jack.so
+15:33:32.599:     linux-capture.so
+15:33:32.599:     linux-alsa.so
+15:33:32.599:     image-source.so
+15:33:32.599:     frontend-tools.so
+15:33:32.599:     decklink-output-ui.so
+15:33:32.599:     decklink-captions.so
+15:33:32.599: ---------------------------------
+15:33:32.600: QWidget::setTabOrder: 'first' and 'second' must be in the same window
+15:33:32.600: ==== Startup complete ===============================================
+15:33:32.629: All scene data cleared
+15:33:32.629: ------------------------------------------------
+15:33:32.631: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.5) 15.0.0'
+15:33:32.632: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+15:33:32.632: pulse-input: Started recording from 'alsa_output.pci-0000_13_00.6.analog-stereo.monitor' (default)
+15:33:32.632: [Loaded global audio device]: 'Desktop Audio'
+15:33:32.632: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.5) 15.0.0'
+15:33:32.632: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+15:33:32.632: pulse-input: Started recording from 'alsa_input.usb-fifine_Microphones_fifine_Microphone_REV1.0-00.iec958-stereo' (default)
+15:33:32.632: [Loaded global audio device]: 'Mic/Aux'
+15:33:32.632: PipeWire initialized
+15:33:32.633: Switched to scene 'Scene'
+15:33:32.633: ------------------------------------------------
+15:33:32.633: Loaded scenes:
+15:33:32.633: - scene 'Scene':
+15:33:32.633:     - source: 'Screen Capture (PipeWire)' (pipewire-desktop-capture-source)
+15:33:32.633: ------------------------------------------------
+15:33:32.685: [pipewire] Screencast session created
+15:33:33.395: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Desktop Audio)
+15:33:33.395: 
+15:33:38.112: [pipewire] Asking for desktop
+15:33:38.113: [pipewire] desktop selected, setting up screencast
+15:33:38.116: [pipewire] Server version: 1.0.5
+15:33:38.116: [pipewire] Library version: 1.0.5
+15:33:38.116: [pipewire] Header version: 1.0.5
+15:33:38.116: [pipewire] Created stream 0x5f967b21f480
+15:33:38.116: [pipewire] Stream 0x5f967b21f480 state: "connecting" (error: none)
+15:33:38.116: [pipewire] Playing stream 0x5f967b21f480
+15:33:38.116: [pipewire] Stream 0x5f967b21f480 state: "paused" (error: none)
+15:33:38.122: [pipewire] Negotiated format:
+15:33:38.122: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:33:38.122: [pipewire]     Modifier: 0x0
+15:33:38.122: [pipewire]     Size: 3396x1356
+15:33:38.122: [pipewire]     Framerate: 0/1
+15:33:38.123: [pipewire] Negotiated format:
+15:33:38.123: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:33:38.123: [pipewire]     Modifier: 0x200000028a37f04
+15:33:38.123: [pipewire]     Size: 3396x1356
+15:33:38.123: [pipewire]     Framerate: 0/1
+15:33:38.174: [pipewire] Stream 0x5f967b21f480 state: "streaming" (error: none)
+15:33:38.179: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+15:33:38.179: [pipewire] Renegotiating stream
+15:33:38.179: [pipewire] Negotiated format:
+15:33:38.179: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:33:38.179: [pipewire]     Modifier: 0x200000028a37f04
+15:33:38.179: [pipewire]     Size: 3396x1356
+15:33:38.179: [pipewire]     Framerate: 0/1
+15:33:38.180: [pipewire] Negotiated format:
+15:33:38.180: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:33:38.180: [pipewire]     Modifier: 0x200000028a01f04
+15:33:38.180: [pipewire]     Size: 3396x1356
+15:33:38.180: [pipewire]     Framerate: 0/1
+15:33:47.402: ---------------------------------
+15:33:47.402: [x264 encoder: 'simple_video_recording'] preset: veryfast
+15:33:47.402: [x264 encoder: 'simple_video_recording'] profile: high
+15:33:47.402: [x264 encoder: 'simple_video_recording'] settings:
+15:33:47.402: 	rate_control: CRF
+15:33:47.402: 	bitrate:      0
+15:33:47.402: 	buffer size:  0
+15:33:47.402: 	crf:          23
+15:33:47.402: 	fps_num:      60
+15:33:47.402: 	fps_den:      1
+15:33:47.402: 	width:        3440
+15:33:47.402: 	height:       1440
+15:33:47.402: 	keyint:       250
+15:33:47.402: 
+15:33:47.430: libfdk_aac encoder created
+15:33:47.430: libfdk_aac bitrate: 192, channels: 2
+15:33:47.443: ==== Recording Start ===============================================
+15:33:47.443: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/vitor/Videos/2024-05-09 15-33-47.mp4'...
+15:33:47.445: Failed to inhibit: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Inhibit” on object at path /org/freedesktop/portal/desktop
+15:33:59.203: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/vitor/Videos/2024-05-09 15-33-47.mp4' stopped
+15:33:59.203: Output 'simple_file_output': stopping
+15:33:59.203: Output 'simple_file_output': Total frames output: 668
+15:33:59.203: Output 'simple_file_output': Total drawn frames: 706
+15:33:59.203: ==== Recording Stop ================================================
+15:33:59.253: libfdk_aac encoder destroyed
+15:35:19.850:   OpenType support missing for "Open Sans", script 11
+15:35:19.851:   OpenType support missing for "Open Sans", script 12
+15:35:19.852:   OpenType support missing for "Open Sans", script 16
+15:35:19.853:   OpenType support missing for "Open Sans", script 20
+15:36:54.751: Number of remaining views: 1
+15:36:54.751: ---------------------------------
+15:36:54.751: video settings reset:
+15:36:54.751: 	base resolution:   3440x1440
+15:36:54.751: 	output resolution: 3440x1440
+15:36:54.751: 	downscale filter:  Bicubic
+15:36:54.751: 	fps:               60/1
+15:36:54.751: 	format:            NV12
+15:36:54.751: 	YUV mode:          Rec. 709/Partial
+15:36:54.751: NV12 texture support enabled
+15:36:54.751: P010 texture support not available
+15:36:54.761: Settings changed (outputs, advanced)
+15:36:54.761: ------------------------------------------------
+15:36:56.826: ---------------------------------
+15:36:56.826: [x264 encoder: 'simple_video_recording'] preset: veryfast
+15:36:56.826: [x264 encoder: 'simple_video_recording'] profile: high
+15:36:56.826: [x264 encoder: 'simple_video_recording'] settings:
+15:36:56.826: 	rate_control: CRF
+15:36:56.826: 	bitrate:      0
+15:36:56.826: 	buffer size:  0
+15:36:56.826: 	crf:          23
+15:36:56.826: 	fps_num:      60
+15:36:56.826: 	fps_den:      1
+15:36:56.826: 	width:        3440
+15:36:56.826: 	height:       1440
+15:36:56.826: 	keyint:       250
+15:36:56.826: 
+15:36:56.840: libfdk_aac encoder created
+15:36:56.840: libfdk_aac bitrate: 192, channels: 2
+15:36:56.841: ==== Recording Start ===============================================
+15:36:56.841: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/vitor/Videos/2024-05-09 15-36-56.mp4'...
+15:36:56.843: Failed to inhibit: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Inhibit” on object at path /org/freedesktop/portal/desktop
+15:37:52.931: output simple_file_output paused
+15:37:55.392: output simple_file_output unpaused
+15:38:02.277: ==== Shutting down ==================================================
+15:38:02.279: pulse-input: Stopped recording from 'alsa_output.pci-0000_13_00.6.analog-stereo.monitor'
+15:38:02.279: pulse-input: Got 10777 packets with 12932400 frames
+15:38:02.279: pulse-input: Stopped recording from 'alsa_input.usb-fifine_Microphones_fifine_Microphone_REV1.0-00.iec958-stereo'
+15:38:02.279: pulse-input: Got 10775 packets with 12930000 frames
+15:38:02.279: [pipewire] Stream 0x5f967b21f480 state: "paused" (error: none)
+15:38:02.279: [pipewire] Stream 0x5f967b21f480 state: "unconnected" (error: none)

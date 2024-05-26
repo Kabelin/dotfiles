@@ -1,0 +1,10 @@
+; systray
+(defwidget systray-module []
+  (box
+    :class "tray"
+    (systray 
+      :pack-direction "ttb"
+      :icon-size 20
+      :space-evenly "true"
+      :spacing 10
+    )))

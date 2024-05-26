@@ -1,11 +1,13 @@
 [Unit]
 Description=OpenRGB control
+BindsTo=default.target
+After=network.target lm_sensors.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/openrgb -c ffffff -m Direct
-User=nobody
-Group=i2c
+ExecStart=/usr/bin/openrgb --startminimized
+Restart=on-failure
+RestartSec=1
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
