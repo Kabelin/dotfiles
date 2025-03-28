@@ -12,10 +12,18 @@ return {
   {
     "nvim-neorg/neorg",
     dependencies = { "nvim-lua/plenary.nvim", "luarocks.nvim" },
+    lazy = false,
+    version = "*",
+    after = "nvim-treesitter",
     config = function()
       require("neorg").setup({
         load = {
           ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.export"] = {
+            config = {
+              export_dir = "~/Documents",
+            },
+          },
           ["core.concealer"] = {
             config = {
               icon_preset = "diamond",

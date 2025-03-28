@@ -7,6 +7,7 @@ return {
         biome = {},
       },
       setup = {},
+      inlay_hints = { enabled = false },
     },
   },
 }
