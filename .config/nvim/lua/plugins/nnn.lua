@@ -8,8 +8,8 @@ return {
 
     opts = {
       picker = {
-        -- cmd = "nnn -AcHr", -- command override (-p flag is implied)
-        cmd = "tmux new-session -s 'nnn-picker' nnn -AcHr", -- command override (-p flag is implied)
+        cmd = "nnn -AcHr", -- command override (-p flag is implied)
+        -- cmd = "tmux new-session -s 'nnn-picker' nnn -AcHr", -- command override (-p flag is implied)
         style = {
           width = 0.7, -- percentage relative to terminal size when < 1, absolute otherwise
           height = 0.6, -- ^

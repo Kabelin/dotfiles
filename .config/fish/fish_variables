@@ -7,7 +7,14 @@ SETUVAR --export --path RIPGREP_CONFIG_PATH:/home/vitor/\x2econfig/\x2eripgreprc
 SETUVAR --export TERM:screen\x2d256color
 SETUVAR --export TERMINAL:wezterm
 SETUVAR --export VISUAL:nvim
-SETUVAR __fish_initialized:3400
+SETUVAR --export __done_notify_sound:1
+SETUVAR __fish_initialized:3800
+SETUVAR _fisher_acomagu_2F_fish_2D_async_2D_prompt_files:\x7e/\x2econfig/fish/conf\x2ed/__async_prompt\x2efish
+SETUVAR _fisher_franciscolourenco_2F_done_files:\x7e/\x2econfig/fish/conf\x2ed/done\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_wttr_files:\x7e/\x2econfig/fish/functions/moon\x2efish\x1e\x7e/\x2econfig/fish/functions/wttr\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1efranciscolourenco/done\x1eacomagu/fish\x2dasync\x2dprompt\x1eoh\x2dmy\x2dfish/plugin\x2dwttr
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:6c7086
 SETUVAR fish_color_cancel:f38ba8
 SETUVAR fish_color_command:89b4fa

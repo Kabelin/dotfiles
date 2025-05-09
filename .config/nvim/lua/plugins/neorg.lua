@@ -34,6 +34,7 @@ return {
               workspaces = {
                 notes = "~/Documents/notes",
                 courses = "~/Documents/courses",
+                books = "~/Documents/books",
                 scratchpad = "~/Documents/scratchpad",
               },
               default_workspace = "scratchpad",

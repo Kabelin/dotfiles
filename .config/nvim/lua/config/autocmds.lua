@@ -21,3 +21,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "json"
   end,
 })
+vim.api.nvim_create_autocmd({ "BufWrite" }, {
+  pattern = vim.fn.expand("$HOME/.config/kitty/kitty.conf"),
+  command = "silent !kill -SIGUSR1 $(pgrep kitty)",
+})
